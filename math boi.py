@@ -57,7 +57,7 @@ print(random.random())
 
 
 
-print("im gay")
+print("im guy")
 
 # Boolean expressions
 # >  greater than
