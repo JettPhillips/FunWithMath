@@ -85,3 +85,110 @@ else:
     ans = 200
 
 print (ans)
+
+# Decision Making -- Selection statements
+a = 5
+b = 10
+c = 75
+
+if a <= b:
+    c = 45
+
+print(c)
+
+if a > b:
+    c = 45
+    if b > c:
+        a = 25
+    else:
+        a = -25
+else:
+    c = 1050
+    if b == a:
+        c = 25
+
+
+print(a, b, c)
+
+
+d = 85
+e = 72
+f = 44
+ans = 0
+
+if d > e:
+    ans = 12
+else:
+    if d == e:
+        ans = 50
+    else:
+        if f < d * e:
+            ans = 100
+        else:
+            ans = 75
+print(ans)
+
+def montePi(numDarts):
+
+    inCircle = 0
+
+    for i in range(numDarts):
+        x = random.random()
+        y = random.random()
+
+        distance = math.sqrt(x**2 + y**2)
+
+        if distance <= 1:
+            inCircle = inCircle + 1
+
+    pi = inCircle / numDarts * 4
+    return pi
+
+print(montePi(10000))
+
+import turtle
+
+def showMontePi(numDarts):
+    scn = turtle.Screen()
+    t = turtle.Turtle()
+
+    scn.setworldcoordinates(-2, -2, 2, 2)
+
+    t.penup()
+    t.goto(-1, 0)
+    t.pendown()
+    t.goto(1, 0)
+
+    t.penup()
+    t.goto(0, 1)
+    t.pendown()
+    t.goto(0, -1)
+
+    inCircle = 0
+    t.penup()
+
+    for i in range(numDarts):
+        x = random.random()
+        y = random.random()
+
+        distance = math.sqrt(x**2 + y**2)
+
+        t.goto(x, y)
+
+        if distance <= 1:
+            inCircle = inCircle + 1
+            t.color("blue")
+        else:
+            t.color("red")
+
+        t.dot()
+
+    pi = inCircle / numDarts * 4
+    scn.exitonclick()
+    return pi
+
+showMontePi(1000)
+
+#  Your Task:
+#  Modify the simulation to plot points in the entire circle.  You will have to
+#    adjust the calculated value of pi accordingly.
